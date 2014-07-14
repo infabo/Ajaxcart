@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Anny_Ajaxcart>
+			<active>true</active>
+			<codePool>community</codePool>
+		</Anny_Ajaxcart>
+	</modules>
+</config>

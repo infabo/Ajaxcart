@@ -1,0 +1,27 @@
+<?php $item = $this->getItem(); ?>
+<?php $isVisibleProduct = $item->getProduct()->isVisibleInSiteVisibility(); ?>
+<?php $hasProductUrl = $this->hasProductUrl(); ?>
+<li class="item">
+	<div class="item-image">
+		<?php if ($hasProductUrl): ?>
+			<a href="<?php echo $this->getProductUrl() ?>" title="<?php echo $this->escapeHtml($this->getProductName()) ?>" class="product-image">
+		<?php endif; ?>
+			<img src="<?php echo $this->getProductThumbnail()->keepFrame(false)->resize(130); ?>" alt="<?php echo $this->escapeHtml($this->getProductName()) ?>" />
+		<?php if ($hasProductUrl): ?>
+			</a>
+		<?php endif; ?>
+	</div>
+	<div class="item-detail">
+		<h4>
+			<?php if ($hasProductUrl): ?>
+				<a href="<?php echo $this->getProductUrl() ?>"><?php echo $this->escapeHtml($this->getProductName()) ?></a>
+			<?php else: ?>
+				<?php echo $this->escapeHtml($this->getProductName()) ?>
+			<?php endif; ?>
+		</h4>
+		<p>
+			<span class="qty"><?php echo $this->helper('checkout')->__('Qty') ?>: <?php echo $this->getQty() ?></span>
+			<span class="price"><?php echo $this->helper('checkout')->__('Price') ?>: <?php echo $this->helper('checkout')->formatPrice($item->getRowTotalInclTax()) ?></span>
+		</p>
+	</div>
+</li>

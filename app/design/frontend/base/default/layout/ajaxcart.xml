@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<layout>
+	<ajaxcart_html>
+		<block type="checkout/cart" name="ajaxcart_html">
+			<action method="setCartTemplate"><value>checkout/ajax/cart.phtml</value></action>
+			<action method="setEmptyTemplate"><value>checkout/ajax/cart/noItems.phtml</value></action>
+			<action method="chooseTemplate"/>
+			<action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>checkout/ajax/cart/item/default.phtml</template></action>
+			<action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>checkout/ajax/cart/item/default.phtml</template></action>
+			<action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>checkout/ajax/cart/item/default.phtml</template></action>
+			<action method="addItemRender"><type>bundle</type><block>bundle/checkout_cart_item_renderer</block><template>checkout/ajax/cart/item/default.phtml</template></action>
+			<block type="core/text_list" name="ajaxcart_html.methods" as="methods" translate="label"/>
+		</block>
+		<!-- payment methods -->
+		<reference name="ajaxcart_html.methods">
+			<!-- onepage -->
+			<block type="checkout/onepage_link" name="ajaxcart_html.methods.onepage" template="checkout/onepage/link.phtml"/>
+			<block type="checkout/multishipping_link" name="ajaxcart_html.methods.multishipping" template="checkout/multishipping/link.phtml"/>
+			<!-- paypal -->
+			<block type="paypal/express_shortcut" name="ajaxcart_html.methods.paypal_express.bottom" before="-" template="paypal/express/shortcut.phtml">
+				<action method="setIsQuoteAllowed"><value>1</value></action>
+			</block>
+		</reference>
+	</ajaxcart_html>
+	<default>
+		<reference name="head">
+			<action method="addItem">
+				<type>skin_js</type>
+				<file>js/ajaxcart.js</file>
+			</action>
+		</reference>
+		<update handle="ajaxcart_html"/>
+		<reference name="after_body_start">
+			<block type="core/template" name="ajaxcart" template="checkout/ajax/cart_container.phtml">
+				<action method="append">
+					<name>ajaxcart_html</name>
+					<alias/>
+				</action>
+			</block>
+		</reference>
+	</default>
+	<checkout_cart_add>
+		<update handle="ajaxcart_html"/>
+		<block type="core/text_list" name="root">
+			<action method="append">
+				<name>ajaxcart_html</name>
+				<alias/>
+			</action>
+		</block>
+	</checkout_cart_add>
+	<!-- product view -->
+	<!-- n.b. these templates provide a simple implementation for testing, but are not the only way to implement ajaxcart -->
+	<catalog_product_view>
+		<reference name="product.info">
+			<action method="setTemplate">
+				<template>catalog/product/view.ajax.phtml</template>
+			</action>
+		</reference>
+		<reference name="product.info.addtocart">
+			<action method="setTemplate">
+				<template>catalog/product/view/addtocart.ajax.phtml</template>
+			</action>
+		</reference>
+	</catalog_product_view>
+	<!-- cart -->
+	<checkout_cart_index>
+		<remove name="ajaxcart"/>
+	</checkout_cart_index>
+	<!-- onepage -->
+	<checkout_onepage_index>
+		<remove name="ajaxcart"/>
+	</checkout_onepage_index>
+	<checkout_multishipping>
+		<remove name="ajaxcart"/>
+	</checkout_multishipping>
+	<checkout_multishipping_login>
+		<remove name="ajaxcart"/>
+	</checkout_multishipping_login>
+	<checkout_multishipping_register>
+		<remove name="ajaxcart"/>
+	</checkout_multishipping_register>
+	<!-- paypal -->
+	<paypal_express_review>
+		<remove name="ajaxcart"/>
+	</paypal_express_review>
+</layout>
