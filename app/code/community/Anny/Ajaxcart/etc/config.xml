@@ -1,27 +1,27 @@
 <?xml version="1.0"?>
 <config>
-	<modules>
-		<Anny_Ajaxcart>
-			<version>0.0.5</version>
-			<platform>ce</platform>
-		</Anny_Ajaxcart>
-	</modules>
-	<frontend>
-		<layout>
-			<updates>
-				<ajaxcart>
-					<file>ajaxcart.xml</file>
-				</ajaxcart>
-			</updates>
-		</layout>
-		<routers>
-			<checkout>
-				<args>
-					<modules>
-						<Anny_Ajaxcart before="Mage_Checkout">Anny_Ajaxcart</Anny_Ajaxcart>
-					</modules>
-				</args>
-			</checkout>
-		</routers>
-	</frontend>
+    <modules>
+        <Anny_Ajaxcart>
+            <version>0.0.5</version>
+            <platform>ce</platform>
+        </Anny_Ajaxcart>
+    </modules>
+    <frontend>
+        <layout>
+            <updates>
+                <ajaxcart>
+                    <file>ajaxcart.xml</file>
+                </ajaxcart>
+            </updates>
+        </layout>
+        <routers>
+            <checkout>
+                <args>
+                    <modules>
+                        <Anny_Ajaxcart before="Mage_Checkout">Anny_Ajaxcart</Anny_Ajaxcart>
+                    </modules>
+                </args>
+            </checkout>
+        </routers>
+    </frontend>
 </config>

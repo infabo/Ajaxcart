@@ -1,0 +1,10 @@
+app/code/community/Anny/Ajaxcart app/code/community/Anny/Ajaxcart
+app/design/frontend/default/default/layout/ajaxcart.xml app/design/frontend/default/default/layout/ajaxcart.xml
+app/design/frontend/default/default/template/catalog/product/view/addtocart.ajax.phtml app/design/frontend/default/default/template/catalog/product/view/addtocart.ajax.phtml
+app/design/frontend/default/default/template/catalog/product/view.ajax.phtml app/design/frontend/default/default/template/catalog/product/view.ajax.phtml
+app/design/frontend/default/default/template/checkout/ajax/cart/item/default.phtml app/design/frontend/default/default/template/checkout/ajax/cart/item/default.phtml
+app/design/frontend/default/default/template/checkout/ajax/cart/noItems.phtml app/design/frontend/default/default/template/checkout/ajax/cart/noItems.phtml
+app/design/frontend/default/default/template/checkout/ajax/cart.phtml app/design/frontend/default/default/template/checkout/ajax/cart.phtml
+app/design/frontend/default/default/template/checkout/ajax/cart_container.phtml app/design/frontend/default/default/template/checkout/ajax/cart_container.phtml
+app/etc/modules/Anny_Ajaxcart.xml app/etc/modules/Anny_Ajaxcart.xml
+C:\Users\Ingo\Dev\WebDev\PhpstormProjects\Ajaxcart\skin\frontend\base\default\js\ajaxcart.js C:\Users\Ingo\Dev\WebDev\PhpstormProjects\Ajaxcart\skin\frontend\base\default\js\ajaxcart.js
