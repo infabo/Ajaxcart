@@ -7,4 +7,4 @@ app/design/frontend/default/default/template/checkout/ajax/cart/noItems.phtml ap
 app/design/frontend/default/default/template/checkout/ajax/cart.phtml app/design/frontend/default/default/template/checkout/ajax/cart.phtml
 app/design/frontend/default/default/template/checkout/ajax/cart_container.phtml app/design/frontend/default/default/template/checkout/ajax/cart_container.phtml
 app/etc/modules/Anny_Ajaxcart.xml app/etc/modules/Anny_Ajaxcart.xml
-C:\Users\Ingo\Dev\WebDev\PhpstormProjects\Ajaxcart\skin\frontend\base\default\js\ajaxcart.js C:\Users\Ingo\Dev\WebDev\PhpstormProjects\Ajaxcart\skin\frontend\base\default\js\ajaxcart.js
+skin/frontend/base/default/js/ajaxcart.js skin/frontend/base/default/js/ajaxcart.js
